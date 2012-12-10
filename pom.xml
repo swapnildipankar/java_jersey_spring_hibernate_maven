@@ -27,6 +27,14 @@
                     <port>8400</port>
                 </configuration>
             </plugin>
+	    <plugin>
+		<artifactId>maven-compiler-plugin</artifactId>
+		<version>2.3.2</version>
+		<configuration>
+		    <source>1.6</source>
+		    <target>1.6</target>
+		</configuration>
+	    </plugin>
         </plugins>
     </build>
    <dependencies>
@@ -303,9 +311,11 @@
          <version>2.0.1</version>
       </dependency>
       <dependency>
-         <groupId>org.aspectj</groupId>
+         <!--<groupId>org.aspectj</groupId>-->
+         <groupId>aspectj</groupId>
          <artifactId>aspectjtools</artifactId>
-         <version>1.6.11.M1</version>
+         <!--<version>1.6.11.M1</version>-->
+         <version>1.5.3</version>
       </dependency>
       <dependency>
          <groupId>org.codehaus.jackson</groupId>
