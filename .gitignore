@@ -2,5 +2,6 @@
 *.original
 *bak*
 *.iml
+*.swp
 .idea*
 target*
