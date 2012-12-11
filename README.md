@@ -18,12 +18,12 @@ Run the following commands in the given sequence:
 * mvn tomcat7:run (The tomcat server should now be ready to accept requests on port 8400)
 
 #### Sample test CURL calls
-* GET:
+* _GET:_
 ```
 	curl "http://localhost:8400/MavenHelloWorld-1.0/rest/user/1234567890"
 ```
 
-* POST:
+* _POST:_
 ```
 	curl -i -H "Content-Type: application/json" -X POST -d \
 	'{
@@ -38,7 +38,7 @@ Run the following commands in the given sequence:
 	}' 'http://localhost:8400/MavenHelloWorld-1.0/rest/user'
 ```
 
-* PUT:
+* _PUT:_
 ```
 	curl -i -H "Content-Type: application/json" -X PUT -d \
 	'{
@@ -54,7 +54,7 @@ Run the following commands in the given sequence:
 	}' 'http://localhost:8400/MavenHelloWorld-1.0/rest/user/1234567890'
 ```
 
-* DELETE:
+* _DELETE:_
 ```
 	curl -i -H "Content-Type: application/json" -X DELETE -d \
 	'{
