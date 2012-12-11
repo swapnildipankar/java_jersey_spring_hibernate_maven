@@ -16,7 +16,11 @@ import javax.ws.rs.PUT;
 
 import org.codehaus.jackson.annotate.JsonProperty;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     @NotNull(groups={PUT.class, GET.class, DELETE.class})
     private String id;
 
@@ -48,6 +52,10 @@ public class User {
     @NotNull(groups=POST.class)
     @JsonProperty("year_of_birth")
     private Integer yearOfBirth;
+
+    public User() {
+
+    }
 
     public String getId() {
         return id;

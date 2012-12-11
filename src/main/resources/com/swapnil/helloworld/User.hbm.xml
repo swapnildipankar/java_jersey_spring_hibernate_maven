@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.swapnil.helloworld.entity.user.User" table="user" catalog="test">
+        <id name="id" type="string">
+            <column name="id" length="30" />
+            <generator class="identity" />
+        </id>
+
+        <property name="nameFirst" type="string">
+            <column name="name_first" length="30" />
+        </property>
+
+        <property name="nameMiddle" type="string">
+            <column name="name_middle" length="10" />
+        </property>
+
+        <property name="nameLast" type="string">
+            <column name="name_last" length="30" />
+        </property>
+
+        <property name="username" type="string">
+            <column name="username" length="32" />
+        </property>
+
+        <property name="password" type="string">
+            <column name="password" length="64" />
+        </property>
+
+        <property name="dateOfBirth" type="java.lang.Integer">
+            <column name="date_of_birth" />
+        </property>
+
+        <property name="monthOfBirth" type="java.lang.Integer">
+            <column name="month_of_birth" />
+        </property>
+
+        <property name="yearOfBirth" type="java.lang.Integer">
+            <column name="year_of_birth" />
+        </property>
+    </class>
+</hibernate-mapping>
