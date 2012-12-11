@@ -2,7 +2,7 @@ Starter project to create RESTful WS using Java, Jersey WS, Spring, Hibernate, M
 __Note:__ _The code is just a framework and does not do anything meaningful. Developers will have to write the actual functionality to make use of the framework._
 
 #### Prerequisite packages
-__Note:__ _Ensure that the user has sudo access to the host_
+__Note:__ _The project has been tested on several versions of Mac OSX and Ubuntu Linux, but can work on any other platform as long as the packages mentioned in this section are available on the platform. Ensure that the user has sudo access to the host_
 * __OpenJDK SDK__ (run command "sudo apt-get install openjdk-6-jdk", if not present)
 * __Maven__ (run command "sudo apt-get install maven2", if not present)
 * __Curl__ (run command "sudo apt-get install curl", if not present)
