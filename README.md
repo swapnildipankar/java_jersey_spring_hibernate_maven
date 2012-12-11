@@ -1,4 +1,3 @@
-#### java_jersey_spring_hibernate_maven
 Starter project to create RESTful WS using Java, Jersey WS, Spring, Hibernate, Maven. Sample code for integrating with Hibernate/MySQL and MongoDB/NoSQL.<br /><br />
 __Note:__ _The code is just a framework and does not do anything meaningful. Developers will have to write the actual functionality to make use of the framework._
 
