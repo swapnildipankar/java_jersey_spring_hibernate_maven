@@ -12,7 +12,7 @@ Run the following commands in the given sequence:
 1. git clone https://github.com/swapnildipankar/java_jersey_spring_hibernate_maven.git
 2. cd java_jersey_spring_hibernate_maven
 3. mvn clean install
-4. mvn tomcat7:run
+4. mvn tomcat7:run (The tomcat server should now be ready to accept requests on port 8400)
 
 Sample test CURL calls
 ======================
