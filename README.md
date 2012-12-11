@@ -4,6 +4,7 @@ __Note:__ _The code is just a framework and does not do anything meaningful. Dev
 #### Prerequisite packages
 __Note:__ _The project has been tested on several versions of Mac OSX and Ubuntu Linux, but can work on any other platform as long as the packages mentioned in this section are available on the platform. Ensure that the user has sudo access to the host_
 * __OpenJDK SDK__ (run command "sudo apt-get install openjdk-6-jdk", if not present)
+* __Git__ (run command "sudo apt-get install git", if not present)
 * __Maven__ (run command "sudo apt-get install maven2", if not present)
 * __Curl__ (run command "sudo apt-get install curl", if not present)
 * __MySQL Server__ (run command "sudo apt-get install mysql-server", if not present)
