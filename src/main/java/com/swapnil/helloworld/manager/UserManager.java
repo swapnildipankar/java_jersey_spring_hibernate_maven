@@ -23,8 +23,6 @@ public class UserManager {
     public User update(Long userID, User user) throws Exception {
         System.out.println("UserManager: update");
 
-        //String userIDFromJSON = user.getId();
-        //if(userID.equals(userIDFromJSON) == false) {
         if(userID != user.getId()) {
             throw new Exception("User ID Mismatch In Update Operation");
         }
@@ -39,11 +37,15 @@ public class UserManager {
         return fetchedUser;
     }
 
+    public User fetchByUsername(String username) {
+        System.out.println("UserManager: fetchByUsername");
+        User fetchedUser = userDAO.fetchByUsername(username);
+        return fetchedUser;
+    }
+
     public User delete(Long userID, User user) throws Exception {
         System.out.println("UserManager: delete");
 
-        //String userIDFromJSON = user.getId();
-        //if(userID.equals(userIDFromJSON) == false) {
         if(userID != user.getId()) {
             throw new Exception("User ID Mismatch In Delete Operation");
         }

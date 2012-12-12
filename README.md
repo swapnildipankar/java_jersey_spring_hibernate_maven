@@ -24,11 +24,6 @@ Run the following commands in the given sequence:
 * mvn tomcat7:run (The tomcat server should now be ready to accept requests on port 8400)
 
 #### Sample test CURL calls
-* _GET:_
-```
-	curl "http://localhost:8400/MavenHelloWorld-1.0/rest/user/1234567890"
-```
-
 * _POST:_
 ```
 	curl -i -H "Content-Type: application/json" -X POST -d \
@@ -48,7 +43,7 @@ Run the following commands in the given sequence:
 ```
 	curl -i -H "Content-Type: application/json" -X PUT -d \
 	'{
-		"id":"1234567890",
+		"id":"1",
 		"username":"swapnildipankar",
 		"password":"ɹɐʞuɐdıD lıudɐʍS",
 		"name_first":"Swapnil",
@@ -57,14 +52,24 @@ Run the following commands in the given sequence:
 		"date_of_birth":14,
 		"month_of_birth":10,
 		"year_of_birth":1978
-	}' 'http://localhost:8400/MavenHelloWorld-1.0/rest/user/1234567890'
+	}' 'http://localhost:8400/MavenHelloWorld-1.0/rest/user/1'
+```
+
+* _GET:_ (By User ID)
+```
+	curl "http://localhost:8400/MavenHelloWorld-1.0/rest/user/1"
+```
+
+* _GET:_ (By UserName)
+```
+	curl "http://localhost:8400/MavenHelloWorld-1.0/rest/user?username=swapnildipankar"
 ```
 
 * _DELETE:_
 ```
 	curl -i -H "Content-Type: application/json" -X DELETE -d \
 	'{
-		"id":"1234567890",
+		"id":"1",
 		"username":"swapnildipankar",
 		"password":"ɹɐʞuɐdıD lıudɐʍS",
 		"name_first":"Swapnil",
@@ -73,5 +78,5 @@ Run the following commands in the given sequence:
 		"date_of_birth":14,
 		"month_of_birth":10,
 		"year_of_birth":1978
-	}' 'http://localhost:8400/MavenHelloWorld-1.0/rest/user/1234567890'
+	}' 'http://localhost:8400/MavenHelloWorld-1.0/rest/user/1'
 ```
