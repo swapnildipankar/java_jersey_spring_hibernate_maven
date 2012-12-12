@@ -20,11 +20,12 @@ public class UserManager {
         return newUser;
     }
 
-    public User update(String userID, User user) throws Exception {
+    public User update(Long userID, User user) throws Exception {
         System.out.println("UserManager: update");
 
-        String userIDFromJSON = user.getId();
-        if(userID.equals(userIDFromJSON) == false) {
+        //String userIDFromJSON = user.getId();
+        //if(userID.equals(userIDFromJSON) == false) {
+        if(userID != user.getId()) {
             throw new Exception("User ID Mismatch In Update Operation");
         }
 
@@ -32,17 +33,18 @@ public class UserManager {
         return updatedUser;
     }
 
-    public User fetch(String userID) {
+    public User fetch(Long userID) {
         System.out.println("UserManager: fetch");
         User fetchedUser = userDAO.fetch(userID);
         return fetchedUser;
     }
 
-    public User delete(String userID, User user) throws Exception {
+    public User delete(Long userID, User user) throws Exception {
         System.out.println("UserManager: delete");
 
-        String userIDFromJSON = user.getId();
-        if(userID.equals(userIDFromJSON) == false) {
+        //String userIDFromJSON = user.getId();
+        //if(userID.equals(userIDFromJSON) == false) {
+        if(userID != user.getId()) {
             throw new Exception("User ID Mismatch In Delete Operation");
         }
 

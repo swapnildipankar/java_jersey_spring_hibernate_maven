@@ -29,14 +29,14 @@ public class UserService {
     @Path("/{param}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public User updateUser(@PathParam("param") String userID, User user) throws Exception {
+    public User updateUser(@PathParam("param") Long userID, User user) throws Exception {
         return userManager.update(userID, user);
     }
 
     @GET
     @Path("/{param}")
     @Produces(MediaType.APPLICATION_JSON)
-    public User fetchUser(@PathParam("param") String userID) {
+    public User fetchUser(@PathParam("param") Long userID) {
         return userManager.fetch(userID);
     }
 
@@ -44,7 +44,7 @@ public class UserService {
     @Path("/{param}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public User deleteUser(@PathParam("param") String userID, User user) throws Exception {
+    public User deleteUser(@PathParam("param") Long userID, User user) throws Exception {
         return userManager.delete(userID, user);
     }
 

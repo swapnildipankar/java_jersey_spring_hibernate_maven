@@ -9,21 +9,31 @@ package com.swapnil.helloworld.dao;
  */
 
 import com.swapnil.helloworld.entity.user.User;
+import com.swapnil.helloworld.util.HibernateUtil;
+import org.hibernate.Session;
 
 public class UserDAO {
     public User add(User user) {
         System.out.println("UserDAO: add");
 
-        user.setId(Integer.toString(new Object().hashCode()));
+        //user.setId(Integer.toString(new Object().hashCode()));
+        System.out.println("UserDAO: START - adding user to the database");
+        Session session = HibernateUtil.getSessionFactory().openSession();
+
+        session.beginTransaction();
+        session.save(user);
+        session.getTransaction().commit();
+        System.out.println("UserDAO: END - adding user to the database");
+
         return user;
     }
 
-    public User update(String userID, User user) {
+    public User update(Long userID, User user) {
         System.out.println("UserDAO: update");
         return user;
     }
 
-    public User fetch(String userID) {
+    public User fetch(Long userID) {
         System.out.println("UserDAO: fetch");
 
         User fetchedUser = new User();
@@ -31,7 +41,7 @@ public class UserDAO {
         return fetchedUser;
     }
 
-    public User delete(String userID, User user) {
+    public User delete(Long userID, User user) {
         System.out.println("UserDAO: delete");
         return user;
     }

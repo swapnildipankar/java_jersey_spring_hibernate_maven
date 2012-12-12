@@ -22,7 +22,7 @@ public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @NotNull(groups={PUT.class, GET.class, DELETE.class})
-    private String id;
+    private Long id;
 
     @NotNull(groups=POST.class)
     @JsonProperty("name_first")
@@ -57,11 +57,11 @@ public class User implements Serializable {
 
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
