@@ -11,11 +11,16 @@ __Note:__ _The project has been tested on several versions of Mac OSX and Ubuntu
 * __Vim (optional)__ (run command "sudo apt-get install vim", if not present)
 * __IntelliJ Idea Community Edition (optional)__ (download IDE from the IntelliJ website)
 
-#### Steps to compile, install and run
+#### Prerequisite MySQL database and tables
+* Ensure that MySQL is running and has the __root__ password as __password__ (Else, modify the __hibernate.cfg.xml__ file with correct database credentials)
+* Ensure that database __test__ exists (Else, create a database __test__ with the access credentials specified in __hibernate.cfg.xml__ file)
+* Ensure that table __user__ exists in database __test__ (Else, run the SQL commands in __database_scripts/create_user_table.sql__ to create one)
+
+#### Steps to compile, install and run code
 Run the following commands in the given sequence:
 * git clone https://github.com/swapnildipankar/java_jersey_spring_hibernate_maven.git
 * cd java_jersey_spring_hibernate_maven
-* mvn clean install
+* mvn clean install (Depending on the connection speed, this step may take several minutes when executing this command for the first time)
 * mvn tomcat7:run (The tomcat server should now be ready to accept requests on port 8400)
 
 #### Sample test CURL calls
