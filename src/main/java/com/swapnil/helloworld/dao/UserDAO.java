@@ -101,8 +101,19 @@ public class UserDAO {
         return fetchedUser;
     }
 
-    public User delete(Long userID, User user) {
+    public User delete(Long userID) {
         System.out.println("UserDAO: delete");
-        return user;
+        System.out.println("UserDAO: START - setting user status to delete in the database");
+        Session session = HibernateUtil.getSessionFactory().openSession();
+
+        session.beginTransaction();
+        User fetchedUser = fetch(userID);
+        fetchedUser.setUserStatus(UserStatus.DELETED);
+        fetchedUser.setUpdatedAt(new Date());
+        session.update(fetchedUser);
+        session.getTransaction().commit();
+        System.out.println("UserDAO: END - setting user status to delete in the database");
+
+        return fetchedUser;
     }
 }

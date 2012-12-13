@@ -50,7 +50,7 @@ public class UserManager {
             throw new Exception("User ID Mismatch In Delete Operation");
         }
 
-        User deletedUser = userDAO.delete(userID, user);
+        User deletedUser = userDAO.delete(userID);
         return deletedUser;
     }
 }
