@@ -1,5 +1,5 @@
 Starter project to create RESTful WS using Java, Jersey WS, Spring, Hibernate, Maven, Liquibase. Sample code for integrating with Hibernate/MySQL and MongoDB/NoSQL.<br /><br />
-__Note:__ _This is a skeletal framework and does not do anything meaningful. Using the sample code, developers can send a sample CURL call (see below) to the running web service and see the changes propagated all the way to the MySQL database. Developers will have to write the actual functionality to make use of the framework._
+__Note:__ _This is a skeletal framework and does not do anything meaningful. Using the sample code, developers can send a sample CURL call (see section "Sample test CURL calls" below) to the running web service and see the changes propagated all the way to the MySQL database. Developers will have to write the actual functionality to make use of the framework._
 
 #### Technologies used in the project
 * __Java__
@@ -34,7 +34,7 @@ Run the following commands in the given sequence:
 * mvn tomcat7:run (The tomcat server should now be ready to accept requests on port 8400)
 
 #### Sample test CURL calls
-* _POST:_
+* __POST__ _Request:_
 ```
 	curl -i -H "Content-Type: application/json" -X POST -d \
 	'{
@@ -49,7 +49,26 @@ Run the following commands in the given sequence:
 	}' 'http://localhost:8400/MavenHelloWorld-1.0/rest/user'
 ```
 
-* _PUT:_
+* _Response:_
+```
+	'{
+		"id": 1,
+		"username": "swapnildipankar",
+		"password": "41a87d0faca541b691f11c6d51874f37b989f0cb1b0075cce599e94f82cbbdfc",
+		"name_first": "Swapnil",
+		"name_middle": "M",
+		"name_last": "Dipankar",
+		"user_status": "PENDING",
+		"user_status_code": "P",
+		"date_of_birth": 14,
+		"month_of_birth": 10,
+		"year_of_birth": 1978,
+		"created_at": 1355386501092,
+		"updated_at": 1355386501092
+	}'
+```
+
+* __PUT__ _Request:_
 ```
 	curl -i -H "Content-Type: application/json" -X PUT -d \
 	'{
@@ -66,17 +85,74 @@ Run the following commands in the given sequence:
 	}' 'http://localhost:8400/MavenHelloWorld-1.0/rest/user/1'
 ```
 
-* _GET:_ (By User ID)
+* _Response:_
+```
+	'{
+		"id": 1,
+		"username": "swapnildipankar",
+		"password": "41a87d0faca541b691f11c6d51874f37b989f0cb1b0075cce599e94f82cbbdfc",
+		"name_first": "Swapnil",
+		"name_middle": "M",
+		"name_last": "Dipankar",
+		"user_status": "ACTIVE",
+		"user_status_code": "A",
+		"date_of_birth": 14,
+		"month_of_birth": 10,
+		"year_of_birth": 1978,
+		"created_at": 1355386501092,
+		"updated_at": 1355388359982
+	}'
+```
+
+* __GET (By User ID)__ _Request:_
 ```
 	curl "http://localhost:8400/MavenHelloWorld-1.0/rest/user/1"
 ```
 
-* _GET:_ (By UserName)
+* _Response:_
+```
+	'{
+		"id": 1,
+		"username": "swapnildipankar",
+		"password": "41a87d0faca541b691f11c6d51874f37b989f0cb1b0075cce599e94f82cbbdfc",
+		"name_first": "Swapnil",
+		"name_middle": "M",
+		"name_last": "Dipankar",
+		"user_status": "ACTIVE",
+		"user_status_code": "A",
+		"date_of_birth": 14,
+		"month_of_birth": 10,
+		"year_of_birth": 1978,
+		"created_at": 1355386501092,
+		"updated_at": 1355388359982
+	}'
+```
+
+* __GET (By UserName)__ _Request:_
 ```
 	curl "http://localhost:8400/MavenHelloWorld-1.0/rest/user?username=swapnildipankar"
 ```
 
-* _DELETE:_
+* _Response:_
+```
+	'{
+		"id": 1,
+		"username": "swapnildipankar",
+		"password": "41a87d0faca541b691f11c6d51874f37b989f0cb1b0075cce599e94f82cbbdfc",
+		"name_first": "Swapnil",
+		"name_middle": "M",
+		"name_last": "Dipankar",
+		"user_status": "ACTIVE",
+		"user_status_code": "A",
+		"date_of_birth": 14,
+		"month_of_birth": 10,
+		"year_of_birth": 1978,
+		"created_at": 1355386501092,
+		"updated_at": 1355388359982
+	}'
+```
+
+* __DELETE__ _Request:_
 ```
 	curl -i -H "Content-Type: application/json" -X DELETE -d \
 	'{
@@ -90,4 +166,23 @@ Run the following commands in the given sequence:
 		"month_of_birth":10,
 		"year_of_birth":1978
 	}' 'http://localhost:8400/MavenHelloWorld-1.0/rest/user/1'
+```
+
+* _Response:_
+```
+	'{
+		"id": 1,
+		"username": "swapnildipankar",
+		"password": "41a87d0faca541b691f11c6d51874f37b989f0cb1b0075cce599e94f82cbbdfc",
+		"name_first": "Swapnil",
+		"name_middle": "M",
+		"name_last": "Dipankar",
+		"user_status": "DELETED",
+		"user_status_code": "D",
+		"date_of_birth": 14,
+		"month_of_birth": 10,
+		"year_of_birth": 1978,
+		"created_at": 1355386501092,
+		"updated_at": 1355388912852
+	}'
 ```
