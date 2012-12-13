@@ -8,6 +8,8 @@ package com.swapnil.helloworld.entity.user;
  * To change this template use File | Settings | File Templates.
  */
 
+import java.util.Date;
+
 import javax.validation.constraints.NotNull;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -41,6 +43,12 @@ public class User implements Serializable {
     @NotNull(groups=POST.class)
     private String password;
 
+    @JsonProperty("user_status")
+    private UserStatus userStatus;
+
+    @JsonProperty("user_status_code")
+    private String userStatusCode;
+
     @JsonProperty("date_of_birth")
     @NotNull(groups=POST.class)
     private Integer dateOfBirth;
@@ -53,9 +61,13 @@ public class User implements Serializable {
     @JsonProperty("year_of_birth")
     private Integer yearOfBirth;
 
-    public User() {
+    @JsonProperty("created_at")
+    private Date createdAt;
 
-    }
+    @JsonProperty("updated_at")
+    private Date updatedAt;
+
+    public User() {}
 
     public Long getId() {
         return id;
@@ -105,6 +117,23 @@ public class User implements Serializable {
         this.password = password;
     }
 
+    public UserStatus getUserStatus() {
+        return userStatus;
+    }
+
+    public void setUserStatus(UserStatus userStatus) {
+        this.userStatus = userStatus;
+        this.userStatusCode = userStatus.getStatusCode();
+    }
+
+    public String getUserStatusCode() {
+        return userStatusCode;
+    }
+
+    public void setUserStatusCode(String userStatusCode) {
+        this.userStatusCode = userStatusCode;
+    }
+
     public Integer getDateOfBirth() {
         return dateOfBirth;
     }
@@ -127,5 +156,21 @@ public class User implements Serializable {
 
     public void setYearOfBirth(Integer yearOfBirth) {
         this.yearOfBirth = yearOfBirth;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }

@@ -29,6 +29,10 @@
             <column name="password" length="64" />
         </property>
 
+        <property name="userStatusCode" type="string">
+            <column name="user_status_code" length="1" />
+        </property>
+
         <property name="dateOfBirth" type="java.lang.Integer">
             <column name="date_of_birth" />
         </property>
@@ -39,6 +43,14 @@
 
         <property name="yearOfBirth" type="java.lang.Integer">
             <column name="year_of_birth" />
+        </property>
+
+        <property name="createdAt" type="java.util.Date">
+            <column name="created_at" />
+        </property>
+
+        <property name="updatedAt" type="java.util.Date">
+            <column name="updated_at" />
         </property>
     </class>
 </hibernate-mapping>

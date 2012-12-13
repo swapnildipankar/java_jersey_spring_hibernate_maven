@@ -9,16 +9,23 @@ package com.swapnil.helloworld.dao;
  */
 
 import com.swapnil.helloworld.entity.user.User;
+import com.swapnil.helloworld.entity.user.UserStatus;
 import com.swapnil.helloworld.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
+
+import java.util.Date;
 
 public class UserDAO {
     public User add(User user) {
         System.out.println("UserDAO: add");
         System.out.println("UserDAO: START - adding user to the database");
-        Session session = HibernateUtil.getSessionFactory().openSession();
 
+        user.setUserStatus(UserStatus.PENDING);
+        user.setCreatedAt(new Date());
+        user.setUpdatedAt(new Date());
+
+        Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
         session.save(user);
         session.getTransaction().commit();
@@ -47,6 +54,9 @@ public class UserDAO {
         if(user.getPassword() != null && !fetchedUser.getPassword().equals(user.getPassword())) {
             fetchedUser.setPassword(user.getPassword());
         }
+        if(user.getUserStatus() != null && !fetchedUser.getUserStatus().equals(user.getUserStatus())) {
+            fetchedUser.setUserStatus(user.getUserStatus());
+        }
         if(user.getDateOfBirth() != null && fetchedUser.getDateOfBirth() != user.getDateOfBirth()) {
             fetchedUser.setDateOfBirth(user.getDateOfBirth());
         }
@@ -56,6 +66,7 @@ public class UserDAO {
         if(user.getYearOfBirth() != null && fetchedUser.getYearOfBirth() != user.getYearOfBirth()) {
             fetchedUser.setYearOfBirth(user.getYearOfBirth());
         }
+        fetchedUser.setUpdatedAt(new Date());
 
         session.update(fetchedUser);
         session.getTransaction().commit();
