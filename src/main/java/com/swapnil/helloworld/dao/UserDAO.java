@@ -54,7 +54,7 @@ public class UserDAO {
         if(user.getPassword() != null && !fetchedUser.getPassword().equals(user.getPassword())) {
             fetchedUser.setPassword(user.getPassword());
         }
-        if(user.getUserStatus() != null && !fetchedUser.getUserStatus().equals(user.getUserStatus())) {
+        if(user.getUserStatus() != null && fetchedUser.getUserStatus() != user.getUserStatus()) {
             fetchedUser.setUserStatus(user.getUserStatus());
         }
         if(user.getDateOfBirth() != null && fetchedUser.getDateOfBirth() != user.getDateOfBirth()) {
@@ -72,7 +72,7 @@ public class UserDAO {
         session.getTransaction().commit();
         System.out.println("UserDAO: END - updating user to the database");
 
-        return user;
+        return fetchedUser;
     }
 
     public User fetch(Long userID) {
