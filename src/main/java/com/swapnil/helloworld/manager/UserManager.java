@@ -14,7 +14,7 @@ import com.swapnil.helloworld.entity.user.User;
 public class UserManager {
     private final UserDAO userDAO = new UserDAO();
 
-    public User add(User user) {
+    public User add(User user) throws Exception {
         System.out.println("UserManager: add");
         User newUser = userDAO.add(user);
         return newUser;

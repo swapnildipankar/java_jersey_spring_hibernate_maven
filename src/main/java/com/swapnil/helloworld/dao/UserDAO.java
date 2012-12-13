@@ -11,13 +11,15 @@ package com.swapnil.helloworld.dao;
 import com.swapnil.helloworld.entity.user.User;
 import com.swapnil.helloworld.entity.user.UserStatus;
 import com.swapnil.helloworld.util.HibernateUtil;
+import com.swapnil.helloworld.util.PasswordEncoder;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
+import java.security.NoSuchAlgorithmException;
 import java.util.Date;
 
 public class UserDAO {
-    public User add(User user) {
+    public User add(User user) throws NoSuchAlgorithmException {
         System.out.println("UserDAO: add");
         System.out.println("UserDAO: START - adding user to the database");
 
@@ -27,6 +29,7 @@ public class UserDAO {
 
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
+        user.setPassword(PasswordEncoder.getEncodedPassword(user.getUsername(), user.getPassword()));
         session.save(user);
         session.getTransaction().commit();
         System.out.println("UserDAO: END - adding user to the database");
@@ -34,7 +37,7 @@ public class UserDAO {
         return user;
     }
 
-    public User update(Long userID, User user) {
+    public User update(Long userID, User user) throws NoSuchAlgorithmException {
         System.out.println("UserDAO: update");
         System.out.println("UserDAO: START - updating user to the database");
         Session session = HibernateUtil.getSessionFactory().openSession();
@@ -51,8 +54,9 @@ public class UserDAO {
         if(user.getNameLast() != null && !fetchedUser.getNameLast().equals(user.getNameLast())) {
             fetchedUser.setNameLast(user.getNameLast());
         }
-        if(user.getPassword() != null && !fetchedUser.getPassword().equals(user.getPassword())) {
-            fetchedUser.setPassword(user.getPassword());
+        String currentEncodedPassword = PasswordEncoder.getEncodedPassword(user.getUsername(), user.getPassword());
+        if(user.getPassword() != null && !fetchedUser.getPassword().equals(currentEncodedPassword)) {
+            fetchedUser.setPassword(currentEncodedPassword);
         }
         if(user.getUserStatus() != null && fetchedUser.getUserStatus() != user.getUserStatus()) {
             fetchedUser.setUserStatus(user.getUserStatus());

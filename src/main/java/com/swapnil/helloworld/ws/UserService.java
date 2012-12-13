@@ -21,7 +21,7 @@ public class UserService {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public User addUser(User user) {
+    public User addUser(User user) throws Exception {
         return userManager.add(user);
     }
 
