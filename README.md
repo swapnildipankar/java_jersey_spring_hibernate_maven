@@ -49,6 +49,7 @@ Run the following commands in the given sequence:
 		"name_first":"Swapnil",
 		"name_middle":"M",
 		"name_last":"Dipankar",
+		"user_status":"ACTIVE",
 		"date_of_birth":14,
 		"month_of_birth":10,
 		"year_of_birth":1978
