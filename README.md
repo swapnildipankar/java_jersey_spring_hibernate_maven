@@ -3,12 +3,12 @@ __Note:__ _The code is just a framework and does not do anything meaningful. Dev
 
 #### Prerequisite packages
 __Note:__ _The project has been tested on several versions of Mac OSX and Ubuntu Linux, but can work on any other platform as long as the packages mentioned in this section are available on the platform. Ensure that the user has sudo access to the host_
-* __OpenJDK SDK__ (run command "sudo apt-get install openjdk-6-jdk", if not present)
-* __Git__ (run command "sudo apt-get install git" or "sudo apt-get install git-core", if not present)
-* __Maven__ (run command "sudo apt-get install maven2", if not present)
-* __Curl__ (run command "sudo apt-get install curl", if not present)
-* __MySQL Server__ (run command "sudo apt-get install mysql-server", if not present)
-* __Vim (optional)__ (run command "sudo apt-get install vim", if not present)
+* __OpenJDK SDK__ (run command _sudo apt-get install openjdk-6-jdk_, if not present)
+* __Git__ (run command _sudo apt-get install git_ or _sudo apt-get install git-core_, if not present)
+* __Maven__ (run command _sudo apt-get install maven2_, if not present)
+* __Curl__ (run command _sudo apt-get install curl_, if not present)
+* __MySQL Server__ (run command _sudo apt-get install mysql-server_, if not present)
+* __Vim (optional)__ (run command _sudo apt-get install vim_, if not present)
 * __IntelliJ Idea Community Edition (optional)__ (download IDE from the IntelliJ website)
 
 #### Prerequisite MySQL database and tables
