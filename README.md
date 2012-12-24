@@ -34,7 +34,7 @@ Run the following commands in the given sequence:
 * mvn tomcat7:run (The tomcat server should now be ready to accept requests on port 8400)
 
 #### Sample test CURL calls
-* _POST:_
+* __POST__ _Request:_
 ```
 	curl -i -H "Content-Type: application/json" -X POST -d \
 	'{
@@ -48,6 +48,26 @@ Run the following commands in the given sequence:
 		"year_of_birth":1978
 	}' 'http://localhost:8400/MavenHelloWorld-1.0/rest/user'
 ```
+
+* _Response:_
+```
+	'{
+		"id": 1,
+		"username": "swapnildipankar",
+		"password": "41a87d0faca541b691f11c6d51874f37b989f0cb1b0075cce599e94f82cbbdfc",
+		"name_first": "Swapnil",
+		"name_middle": "M",
+		"name_last": "Dipankar",
+		"user_status": "PENDING",
+		"user_status_code": "P",
+		"date_of_birth": 14,
+		"month_of_birth": 10,
+		"year_of_birth": 1978,
+		"created_at": 1355386501092,
+		"updated_at": 1355386501092
+	}'
+```
+
 
 * _PUT:_
 ```
