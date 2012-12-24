@@ -1,5 +1,15 @@
-Starter project to create RESTful WS using Java, Jersey WS, Spring, Hibernate, Maven. Sample code for integrating with Hibernate/MySQL and MongoDB/NoSQL.<br /><br />
-__Note:__ _The code is just a framework and does not do anything meaningful. Developers will have to write the actual functionality to make use of the framework._
+Starter project to create RESTful WS using Java, Jersey WS, Spring, Hibernate, Maven, Liquibase. Sample code for integrating with Hibernate/MySQL and MongoDB/NoSQL.<br /><br />
+__Note:__ _This is a skeletal framework and does not do anything meaningful. Using the sample code, developers can send a sample CURL call (see below) to the running web service and see the changes propagated all the way to the MySQL database. Developers will have to write the actual functionality to make use of the framework._
+
+#### Technologies used in the project
+* __Java__
+* __Jersey WS Framework__
+* __Spring Framework__
+* __Hibernate__
+* __Maven__
+* __Liquibase__
+* __MySQL__
+* __Mongo DB__ (pending)
 
 #### Prerequisite packages
 __Note:__ _The project has been tested on several versions of Mac OSX and Ubuntu Linux, but can work on any other platform as long as the packages mentioned in this section are available on the platform. Ensure that the user has sudo access to the host_
@@ -14,13 +24,13 @@ __Note:__ _The project has been tested on several versions of Mac OSX and Ubuntu
 #### Prerequisite MySQL database and tables
 * Ensure that MySQL is running and has the __root__ password as __password__ (Else, modify the __hibernate.cfg.xml__ file with correct database credentials)
 * Ensure that database __test__ exists (Else, create a database __test__ with the access credentials specified in __hibernate.cfg.xml__ file)
-* Ensure that table __user__ exists in database __test__ (Else, run the SQL commands in __database_scripts/create_user_table.sql__ to create one)
 
 #### Steps to compile, install and run code
 Run the following commands in the given sequence:
 * git clone https://github.com/swapnildipankar/java_jersey_spring_hibernate_maven.git
 * cd java_jersey_spring_hibernate_maven
 * mvn clean install (Depending on the connection speed, this step may take several minutes when executing this command for the first time)
+* mvn resources:resources liquibase:update -P database-localhost -Dliquibase.password=password (This creates the table __user__ in the database __test__)
 * mvn tomcat7:run (The tomcat server should now be ready to accept requests on port 8400)
 
 #### Sample test CURL calls
