@@ -13,7 +13,7 @@ __Note:__ _This is a skeletal framework and does not do anything meaningful. Usi
 
 #### Prerequisite packages
 __Note:__ _The project has been tested on several versions of Mac OSX and Ubuntu Linux, but can work on any other platform as long as the packages mentioned in this section are available on the platform. Ensure that the user has sudo access to the host_
-* __OpenJDK SDK__ (run command _sudo apt-get install openjdk-6-jdk_, if not present)
+* __OpenJDK SDK__ (run command _sudo apt-get install openjdk-6-jdk_, if not present) __Note:__ _Sun JDK can be used instead of OpenJDK without impacting the functionality of the framework_
 * __Git__ (run command _sudo apt-get install git_ or _sudo apt-get install git-core_, if not present)
 * __Maven__ (run command _sudo apt-get install maven2_, if not present)
 * __Curl__ (run command _sudo apt-get install curl_, if not present)
