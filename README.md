@@ -94,13 +94,13 @@ Run the following commands in the given sequence:
 		"name_first": "Swapnil",
 		"name_middle": "M",
 		"name_last": "Dipankar",
-		"user_status": "PENDING",
-		"user_status_code": "P",
+		"user_status": "ACTIVE",
+		"user_status_code": "A",
 		"date_of_birth": 14,
 		"month_of_birth": 10,
 		"year_of_birth": 1978,
 		"created_at": 1355386501092,
-		"updated_at": 1355386501092
+		"updated_at": 1355388359982
 	}'
 ```
 
@@ -118,13 +118,13 @@ Run the following commands in the given sequence:
 		"name_first": "Swapnil",
 		"name_middle": "M",
 		"name_last": "Dipankar",
-		"user_status": "PENDING",
-		"user_status_code": "P",
+		"user_status": "ACTIVE",
+		"user_status_code": "A",
 		"date_of_birth": 14,
 		"month_of_birth": 10,
 		"year_of_birth": 1978,
 		"created_at": 1355386501092,
-		"updated_at": 1355386501092
+		"updated_at": 1355388359982
 	}'
 ```
 
@@ -142,13 +142,13 @@ Run the following commands in the given sequence:
 		"name_first": "Swapnil",
 		"name_middle": "M",
 		"name_last": "Dipankar",
-		"user_status": "PENDING",
-		"user_status_code": "P",
+		"user_status": "ACTIVE",
+		"user_status_code": "A",
 		"date_of_birth": 14,
 		"month_of_birth": 10,
 		"year_of_birth": 1978,
 		"created_at": 1355386501092,
-		"updated_at": 1355386501092
+		"updated_at": 1355388359982
 	}'
 ```
 
@@ -177,12 +177,12 @@ Run the following commands in the given sequence:
 		"name_first": "Swapnil",
 		"name_middle": "M",
 		"name_last": "Dipankar",
-		"user_status": "PENDING",
-		"user_status_code": "P",
+		"user_status": "DELETED",
+		"user_status_code": "D",
 		"date_of_birth": 14,
 		"month_of_birth": 10,
 		"year_of_birth": 1978,
 		"created_at": 1355386501092,
-		"updated_at": 1355386501092
+		"updated_at": 1355388359982
 	}'
 ```
