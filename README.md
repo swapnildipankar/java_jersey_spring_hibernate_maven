@@ -168,7 +168,7 @@ Run the following commands in the given sequence:
 	}' 'http://localhost:8400/MavenHelloWorld-1.0/rest/user/1'
 ```
 
-* _Response:_ __Notice that the user gets marked as 'DELETED' and is not removed from the database__
+* _Response:_ _[Notice that the user gets marked as 'DELETED' and is not removed from the database]_
 ```
 	'{
 		"id": 1,
