@@ -11,6 +11,7 @@ package com.swapnil.helloworld.ws;
 import com.swapnil.helloworld.entity.user.User;
 import com.swapnil.helloworld.manager.UserManager;
 
+import java.util.List;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
@@ -41,9 +42,16 @@ public class UserService {
     }
 
     @GET
+    @Path("/username/{param}")
     @Produces(MediaType.APPLICATION_JSON)
-    public User fetchUserByUsername(@QueryParam("username") String username) {
+    public User fetchUserByUsername(@PathParam("param") String username) {
         return userManager.fetchByUsername(username);
+    }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<User> fetchAllUsers(@QueryParam("include_all") boolean includeAll) {
+        return userManager.fetchAll(includeAll);
     }
 
     @DELETE

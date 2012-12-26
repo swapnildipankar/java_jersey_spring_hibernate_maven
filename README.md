@@ -130,7 +130,7 @@ Run the following commands in the given sequence:
 
 * __GET (By UserName)__ _Request:_
 ```
-	curl "http://localhost:8400/MavenHelloWorld-1.0/rest/user?username=swapnildipankar"
+	curl "http://localhost:8400/MavenHelloWorld-1.0/rest/user/username/swapnildipankar"
 ```
 
 * _Response:_

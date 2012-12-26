@@ -17,6 +17,8 @@ import org.hibernate.criterion.Restrictions;
 
 import java.security.NoSuchAlgorithmException;
 import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
 
 public class UserDAO {
     public User add(User user) throws NoSuchAlgorithmException {
@@ -103,6 +105,36 @@ public class UserDAO {
         System.out.println("UserDAO: END - fetching user from the database by username");
 
         return fetchedUser;
+    }
+
+    public List<User> fetchAll(boolean includeAll) {
+        System.out.println("UserDAO: fetchAll");
+        System.out.println("UserDAO: START - fetching all users from the database");
+        Session session = HibernateUtil.getSessionFactory().openSession();
+
+        session.beginTransaction();
+        List<User> fetchedUsers = (List<User>) session.createCriteria(User.class).
+                list();
+
+        System.out.println("DEBUG: includeAll [" + includeAll + "]");
+        if(includeAll == false) {
+            System.out.println("UserDAO: removing non-active users");
+            Iterator<User> iterator = fetchedUsers.iterator();
+            while(iterator.hasNext()) {
+                User currentUser = (User) iterator.next();
+                String userStatusCode = currentUser.getUserStatusCode();
+                System.out.println("DEBUG: User Status Code [" + userStatusCode + "]");
+                if(!userStatusCode.equals("A")) {
+                    System.out.println("DEBUG: Removing User [" + currentUser.getUsername() + "]");
+                    iterator.remove();
+                }
+            }
+        } else {
+            System.out.println("UserDAO: including all users");
+        }
+        System.out.println("UserDAO: END - fetching all users from the database");
+
+        return fetchedUsers;
     }
 
     public User delete(Long userID) {

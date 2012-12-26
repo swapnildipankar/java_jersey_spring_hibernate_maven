@@ -11,6 +11,8 @@ package com.swapnil.helloworld.manager;
 import com.swapnil.helloworld.dao.UserDAO;
 import com.swapnil.helloworld.entity.user.User;
 
+import java.util.List;
+
 public class UserManager {
     private final UserDAO userDAO = new UserDAO();
 
@@ -42,6 +44,12 @@ public class UserManager {
         System.out.println("UserManager: fetchByUsername");
         User fetchedUser = userDAO.fetchByUsername(username);
         return fetchedUser;
+    }
+
+    public List<User> fetchAll(boolean includeAll) {
+        System.out.println("UserManager: fetchAll");
+        List<User> fetchedUsers = userDAO.fetchAll(includeAll);
+        return fetchedUsers;
     }
 
     public User delete(Long userID, User user) throws Exception {
