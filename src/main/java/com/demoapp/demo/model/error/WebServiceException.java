@@ -9,20 +9,20 @@ import java.util.List;
  * Time: 11:20 AM
  * To change this template use File | Settings | File Templates.
  */
-public class PaymentServiceException extends Exception {
+public class WebServiceException extends Exception {
     private int exceptionCode;
     private List<String> exceptionMessageList;
 
-    public PaymentServiceException(String exceptionMessage) {
+    public WebServiceException(String exceptionMessage) {
         super(exceptionMessage);
     }
 
-    public PaymentServiceException(int exceptionCode, String exceptionMessage) {
+    public WebServiceException(int exceptionCode, String exceptionMessage) {
         super(exceptionMessage);
         this.exceptionCode = exceptionCode;
     }
 
-    public PaymentServiceException(int exceptionCode, String exceptionMessage, List<String> exceptionMessageList) {
+    public WebServiceException(int exceptionCode, String exceptionMessage, List<String> exceptionMessageList) {
         super(exceptionMessage);
         this.exceptionCode = exceptionCode;
         this.exceptionMessageList = exceptionMessageList;

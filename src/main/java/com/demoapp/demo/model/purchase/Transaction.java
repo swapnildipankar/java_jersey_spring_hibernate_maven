@@ -1,4 +1,4 @@
-package com.demoapp.demo.model.authorization;
+package com.demoapp.demo.model.purchase;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.data.mongodb.core.mapping.Document;

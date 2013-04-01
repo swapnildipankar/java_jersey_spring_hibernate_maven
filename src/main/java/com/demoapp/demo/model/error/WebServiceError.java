@@ -11,7 +11,7 @@ import java.util.List;
  * Time: 1:31 PM
  * To change this template use File | Settings | File Templates.
  */
-public class PaymentServiceError {
+public class WebServiceError {
     @JsonProperty("error_code")
     private int errorCode;
 
@@ -21,7 +21,7 @@ public class PaymentServiceError {
     @JsonProperty("error_message_list")
     private List<String> errorMessageList;
 
-    public PaymentServiceError(int errorCode, String errorMessage) {
+    public WebServiceError(int errorCode, String errorMessage) {
         this.errorCode = errorCode;
         this.errorMessage = errorMessage;
     }
