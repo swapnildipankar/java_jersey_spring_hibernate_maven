@@ -1,5 +1,5 @@
 Starter project to create RESTful WS using Java, Jersey WS, Spring, Hibernate, Maven, Liquibase. Sample code for integrating with Hibernate/MySQL and MongoDB/NoSQL.<br /><br />
-__Note:__ _This is a skeletal framework and does not do anything meaningful. Using the sample code, developers can send a sample CURL call (see section "Sample test CURL calls" below) to the running web service and see the changes propagated all the way to the MySQL database. Developers will have to write the actual functionality to make use of the framework._
+__Note:__ _This is a skeletal framework and does not do anything meaningful. Using the sample code, developers can send a sample CURL call (see section "Sample test CURL calls" below) to the running web service and see the changes propagated all the way to the databases. There are, currently, two webservice end points, /user and /purchase for demonstrating MySQL and MongoDB respectively. Developers will have to write the actual functionality to make use of the framework._
 
 #### Technologies used in the project
 * __Java__
@@ -18,12 +18,18 @@ __Note:__ _The project has been tested on several versions of Mac OSX and Ubuntu
 * __Maven__ (run command _sudo apt-get install maven2_, if not present)
 * __Curl__ (run command _sudo apt-get install curl_, if not present)
 * __MySQL Server__ (run command _sudo apt-get install mysql-server_, if not present)
+* __MongoDB__ (run command _sudo apt-get install mongodb_, if not present)
 * __Vim (optional)__ (run command _sudo apt-get install vim_, if not present)
-* __IntelliJ Idea Community Edition (optional)__ (download IDE from the IntelliJ website)
+* __IntelliJ Idea Community Edition (optional)__ (download IDE from http://www.jetbrains.com/idea/download/index.html)
+* __Cocoa REST Client (optional, this is only for Mac OSX)__ (download from https://code.google.com/p/cocoa-rest-client/)
 
 #### Prerequisite MySQL database and tables
 * Ensure that MySQL is running and has the __root__ password as __password__ (Else, modify the __hibernate.cfg.xml__ file with correct database credentials)
 * Ensure that database __test__ exists (Else, create a database __test__ with the access credentials specified in __hibernate.cfg.xml__ file)
+
+#### Prerequisite MongoDB database
+* Ensure that MongoDB is running (run command _mongod --master --dbpath path_to_directory_that_will_contain_database_data_)
+* Ensure that database __purchase__ has user with credentials (purchase_user, purchase4user) (Else, modify the credentials in file __resources/mongodb/mongo-config.json__)
 
 #### Steps to compile, install and run code
 Run the following commands in the given sequence:
@@ -33,7 +39,7 @@ Run the following commands in the given sequence:
 * mvn resources:resources liquibase:update -P database-localhost -Dliquibase.password=password (This creates the table __user__ in the database __test__)
 * mvn tomcat7:run (The tomcat server should now be ready to accept requests on port 8400)
 
-#### Sample test CURL calls
+#### Sample test CURL calls (http://localhost:8400/demows/user - this uses MySQL for persistence)
 * __POST__ _Request:_
 ```
 	curl -i -H "Content-Type: application/json" -X POST -d \
