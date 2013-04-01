@@ -1,11 +1,11 @@
-package com.swapnil.helloworld;
+package com.demoapp.demo;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
 /**
- * Unit test for simple App.
+ * Unit test for simple Application.
  */
 public class AppTest 
     extends TestCase

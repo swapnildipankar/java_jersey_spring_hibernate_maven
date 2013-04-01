@@ -1,4 +1,4 @@
-package com.swapnil.helloworld.dao;
+package com.demoapp.demo.dao;
 
 /**
  * Created with IntelliJ IDEA.
@@ -8,18 +8,20 @@ package com.swapnil.helloworld.dao;
  * To change this template use File | Settings | File Templates.
  */
 
-import com.swapnil.helloworld.entity.user.User;
-import com.swapnil.helloworld.entity.user.UserStatus;
-import com.swapnil.helloworld.util.HibernateUtil;
-import com.swapnil.helloworld.util.PasswordEncoder;
+import com.demoapp.demo.model.user.User;
+import com.demoapp.demo.model.user.UserStatus;
+import com.demoapp.demo.util.HibernateUtil;
+import com.demoapp.demo.util.PasswordEncoder;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Component;
 
 import java.security.NoSuchAlgorithmException;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
+@Component
 public class UserDAO {
     public User add(User user) throws NoSuchAlgorithmException {
         System.out.println("UserDAO: add");

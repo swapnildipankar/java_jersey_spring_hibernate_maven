@@ -1,4 +1,4 @@
-package com.swapnil.helloworld.entity.user;
+package com.demoapp.demo.model.user;
 
 /**
  * Created with IntelliJ IDEA.
@@ -8,18 +8,18 @@ package com.swapnil.helloworld.entity.user;
  * To change this template use File | Settings | File Templates.
  */
 
-import java.util.Date;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.validation.constraints.NotNull;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
-
-import org.codehaus.jackson.annotate.JsonProperty;
-
 import java.io.Serializable;
+import java.util.Date;
 
+@Document
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 

@@ -3,7 +3,7 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="com.swapnil.helloworld.entity.user.User" table="user" catalog="test">
+    <class name="com.demoapp.demo.model.user.User" table="user" catalog="test">
         <id name="id" type="java.lang.Long">
             <column name="id" />
             <generator class="identity" />

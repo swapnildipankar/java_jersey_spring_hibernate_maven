@@ -46,7 +46,7 @@ Run the following commands in the given sequence:
 		"date_of_birth":14,
 		"month_of_birth":10,
 		"year_of_birth":1978
-	}' 'http://localhost:8400/MavenHelloWorld-1.0/rest/user'
+	}' 'http://localhost:8400/demows/user'
 ```
 
 * _Response:_
@@ -82,7 +82,7 @@ Run the following commands in the given sequence:
 		"date_of_birth":14,
 		"month_of_birth":10,
 		"year_of_birth":1978
-	}' 'http://localhost:8400/MavenHelloWorld-1.0/rest/user/1'
+	}' 'http://localhost:8400/demows/user/1'
 ```
 
 * _Response:_
@@ -106,7 +106,7 @@ Run the following commands in the given sequence:
 
 * __GET (By User ID)__ _Request:_
 ```
-	curl "http://localhost:8400/MavenHelloWorld-1.0/rest/user/1"
+	curl 'http://localhost:8400/demows/user/1'
 ```
 
 * _Response:_
@@ -130,7 +130,7 @@ Run the following commands in the given sequence:
 
 * __GET (By UserName)__ _Request:_
 ```
-	curl "http://localhost:8400/MavenHelloWorld-1.0/rest/user/username/swapnildipankar"
+	curl 'http://localhost:8400/demows/user/username/swapnildipankar'
 ```
 
 * _Response:_
@@ -165,7 +165,7 @@ Run the following commands in the given sequence:
 		"date_of_birth":14,
 		"month_of_birth":10,
 		"year_of_birth":1978
-	}' 'http://localhost:8400/MavenHelloWorld-1.0/rest/user/1'
+	}' 'http://localhost:8400/demows/user/1'
 ```
 
 * _Response:_ _[Notice that the user gets marked as 'DELETED' and is not removed from the database]_

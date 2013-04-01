@@ -1,4 +1,4 @@
-package com.swapnil.helloworld.entity.user;
+package com.demoapp.demo.model.user;
 
 /**
  * Created with IntelliJ IDEA.

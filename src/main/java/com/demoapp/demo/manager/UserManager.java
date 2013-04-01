@@ -1,4 +1,4 @@
-package com.swapnil.helloworld.manager;
+package com.demoapp.demo.manager;
 
 /**
  * Created with IntelliJ IDEA.
@@ -8,13 +8,17 @@ package com.swapnil.helloworld.manager;
  * To change this template use File | Settings | File Templates.
  */
 
-import com.swapnil.helloworld.dao.UserDAO;
-import com.swapnil.helloworld.entity.user.User;
+import com.demoapp.demo.dao.UserDAO;
+import com.demoapp.demo.model.user.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class UserManager {
-    private final UserDAO userDAO = new UserDAO();
+    @Autowired
+    UserDAO userDAO;
 
     public User add(User user) throws Exception {
         System.out.println("UserManager: add");

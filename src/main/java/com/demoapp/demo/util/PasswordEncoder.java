@@ -1,4 +1,4 @@
-package com.swapnil.helloworld.util;
+package com.demoapp.demo.util;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
