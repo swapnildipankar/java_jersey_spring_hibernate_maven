@@ -22,7 +22,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 @Controller
-@RequestMapping("/purchase_request")
+@RequestMapping("/purchase")
 public class PurchaseRequestController {
     @Autowired
 	PurchaseRequestManager purchaseRequestManager;
