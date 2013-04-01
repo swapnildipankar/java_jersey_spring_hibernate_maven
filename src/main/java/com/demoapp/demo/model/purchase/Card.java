@@ -32,9 +32,6 @@ public class Card {
     @JsonProperty("expiration_year")
     private String expirationYear;
 
-    @JsonProperty("original_encryption_type")
-    private String originalEncryptionType;
-
     @NotNull(groups=POST.class, message = "security_code: Missing Required Field")
     @JsonProperty("security_code")
     private String securityCode;
@@ -79,14 +76,6 @@ public class Card {
         this.expirationYear = expirationYear;
     }
 
-    public String getOriginalEncryptionType() {
-        return originalEncryptionType;
-    }
-
-    public void setOriginalEncryptionType(String originalEncryptionType) {
-        this.originalEncryptionType = originalEncryptionType;
-    }
-
     public String getSecurityCode() {
         return securityCode;
     }
@@ -103,7 +92,6 @@ public class Card {
                 ", encryptionType='" + encryptionType + '\'' +
                 ", expirationMonth='" + expirationMonth + '\'' +
                 ", expirationYear='" + expirationYear + '\'' +
-                ", originalEncryptionType='" + originalEncryptionType + '\'' +
                 ", securityCode='" + securityCode + '\'' +
                 '}';
     }
