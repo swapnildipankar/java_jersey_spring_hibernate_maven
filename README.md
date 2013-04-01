@@ -9,7 +9,7 @@ __Note:__ _This is a skeletal framework and does not do anything meaningful. Usi
 * __Maven__
 * __Liquibase__
 * __MySQL__
-* __Mongo DB__ (pending)
+* __Mongo DB__
 
 #### Prerequisite packages
 __Note:__ _The project has been tested on several versions of Mac OSX and Ubuntu Linux, but can work on any other platform as long as the packages mentioned in this section are available on the platform. Ensure that the user has sudo access to the host_
