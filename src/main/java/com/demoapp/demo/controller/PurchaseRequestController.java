@@ -92,8 +92,8 @@ public class PurchaseRequestController {
 
     // Exception handler for WebServiceException cases
     @ExceptionHandler(WebServiceException.class)
-    public ResponseEntity<WebServiceError> handlePaymentServiceException(WebServiceException webServiceException) {
-        System.out.println("AuthorizationRequestController.handlePaymentServiceException");
+    public ResponseEntity<WebServiceError> handleWebServiceException(WebServiceException webServiceException) {
+        System.out.println("AuthorizationRequestController.handleWebServiceException");
         WebServiceError webServiceError = new WebServiceError(webServiceException.getExceptionCode(), webServiceException.getExceptionMessage());
 
         // This should happen in case of input constraint validations

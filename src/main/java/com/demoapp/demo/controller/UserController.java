@@ -9,8 +9,12 @@ package com.demoapp.demo.controller;
  */
 
 import com.demoapp.demo.manager.UserManager;
+import com.demoapp.demo.model.error.WebServiceError;
+import com.demoapp.demo.model.error.WebServiceException;
 import com.demoapp.demo.model.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -56,5 +60,26 @@ public class UserController {
     @ResponseBody
     public User deleteUser(@PathVariable Long id, @RequestBody User user) throws Exception {
         return userManager.delete(id, user);
+    }
+
+    // Exception handler for WebServiceException cases
+    @ExceptionHandler(WebServiceException.class)
+    public ResponseEntity<WebServiceError> handleWebServiceException(WebServiceException webServiceException) {
+        System.out.println("UserController.handleWebServiceException");
+        WebServiceError webServiceError = new WebServiceError(webServiceException.getExceptionCode(), webServiceException.getExceptionMessage());
+
+        // This should happen in case of input constraint validations
+        if(webServiceException.getExceptionMessageList() != null) {
+            webServiceError.setErrorMessageList(webServiceException.getExceptionMessageList());
+        }
+        return new ResponseEntity<WebServiceError>(webServiceError, HttpStatus.BAD_REQUEST);
+    }
+
+    // Exception handler for generic Exception cases
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<WebServiceError> handleException(Exception exception) {
+        System.out.println("UserController.handleException");
+        WebServiceError webServiceError = new WebServiceError(400, exception.getMessage());
+        return new ResponseEntity<WebServiceError>(webServiceError, HttpStatus.BAD_REQUEST);
     }
 }
