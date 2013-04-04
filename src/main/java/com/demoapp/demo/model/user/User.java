@@ -8,6 +8,7 @@ package com.demoapp.demo.model.user;
  * To change this template use File | Settings | File Templates.
  */
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -20,6 +21,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Document
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 

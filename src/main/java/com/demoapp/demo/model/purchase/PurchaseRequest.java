@@ -1,5 +1,6 @@
 package com.demoapp.demo.model.purchase;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.validator.constraints.Email;
 import org.springframework.data.annotation.Id;
@@ -28,6 +29,7 @@ import javax.ws.rs.PUT;
         @CompoundIndex(name = "payment_client_id_idx", def = "{'paymentClientId': 1}"),
         @CompoundIndex(name = "order_number_idx", def = "{'orderNumber': 1}")
 })
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class PurchaseRequest {
     @Id
     @NotNull(groups=PUT.class, message = "id: Missing Required Field")
@@ -63,7 +65,7 @@ public class PurchaseRequest {
 	private String invoiceNumber;
 
     @Indexed
-    @NotNull(groups=POST.class, message = "web_order_number: Missing Required Field")
+    @NotNull(groups=POST.class, message = "order_number: Missing Required Field")
     @JsonProperty("order_number")
     private String orderNumber;
 

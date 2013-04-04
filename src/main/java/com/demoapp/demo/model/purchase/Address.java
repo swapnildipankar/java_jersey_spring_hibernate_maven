@@ -1,5 +1,6 @@
 package com.demoapp.demo.model.purchase;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -15,6 +16,7 @@ import javax.ws.rs.POST;
  * To change this template use File | Settings | File Templates.
  */
 @Document
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Address {
     @NotNull(groups=POST.class, message = "city: Missing Required Field")
     @NotBlank(groups=POST.class, message = "city: Cannot Be Blank")
