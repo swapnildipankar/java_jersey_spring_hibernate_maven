@@ -67,7 +67,7 @@ public class PurchaseRequestManager {
     }
 
     private <T> void validate(PurchaseRequest request, Class<T> T) throws WebServiceException {
-        System.out.println("AuthorizationRequestDAO.validate");
+        System.out.println("PurchaseRequestManager.validate");
 
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         Validator validator = factory.getValidator();

@@ -14,7 +14,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.validation.constraints.NotNull;
 import javax.ws.rs.DELETE;
-import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import java.io.Serializable;
@@ -25,17 +24,17 @@ import java.util.Date;
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @NotNull(groups={PUT.class, GET.class, DELETE.class})
+    @NotNull(groups={PUT.class, DELETE.class}, message = "id: Missing Required Field")
     private Long id;
 
-    @NotNull(groups=POST.class)
+    @NotNull(groups=POST.class, message = "name_first: Missing Required Field")
     @JsonProperty("name_first")
     private String nameFirst;
 
     @JsonProperty("name_middle")
     private String nameMiddle;
 
-    @NotNull(groups=POST.class)
+    @NotNull(groups=POST.class, message = "name_last: Missing Required Field")
     @JsonProperty("name_last")
     private String nameLast;
 
@@ -51,15 +50,15 @@ public class User implements Serializable {
     @JsonProperty("user_status_code")
     private String userStatusCode;
 
+    @NotNull(groups=POST.class, message = "date_of_birth: Missing Required Field")
     @JsonProperty("date_of_birth")
-    @NotNull(groups=POST.class)
     private Integer dateOfBirth;
 
-    @NotNull(groups=POST.class)
+    @NotNull(groups=POST.class, message = "month_of_birth: Missing Required Field")
     @JsonProperty("month_of_birth")
     private Integer monthOfBirth;
 
-    @NotNull(groups=POST.class)
+    @NotNull(groups=POST.class, message = "year_of_birth: Missing Required Field")
     @JsonProperty("year_of_birth")
     private Integer yearOfBirth;
 
@@ -174,5 +173,24 @@ public class User implements Serializable {
 
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", nameFirst='" + nameFirst + '\'' +
+                ", nameMiddle='" + nameMiddle + '\'' +
+                ", nameLast='" + nameLast + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", userStatus=" + userStatus +
+                ", userStatusCode='" + userStatusCode + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                ", monthOfBirth=" + monthOfBirth +
+                ", yearOfBirth=" + yearOfBirth +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                '}';
     }
 }
