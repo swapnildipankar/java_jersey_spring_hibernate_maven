@@ -1,5 +1,13 @@
 Starter project to create RESTful WS using Java, Jersey WS, Spring, Hibernate, Maven, Liquibase. Sample code for integrating with Hibernate/MySQL and MongoDB/NoSQL.<br /><br />
-__Note:__ _This is a skeletal framework and does not do anything meaningful. Using the sample code, developers can send a sample CURL call (see section "Sample test CURL calls" below) to the running web service and see the changes propagated all the way to the databases. There are, currently, two webservice end points, /user and /purchase for demonstrating MySQL and MongoDB respectively. Developers will have to write the actual functionality to make use of the framework._
+__Note:__ _This is a skeletal framework. Using the sample code, developers can send a sample CURL call (see section "Sample test CURL calls" below) to the running web service and see the changes propagated all the way to the databases. There are, currently, two webservice end points, /user and /purchase for demonstrating MySQL and MongoDB respectively. Developers will have to write the actual functionality to make use of the framework._
+
+__New:__ _Support for MongoDB_
+__Coming Up:__ _Support for Cassandra_
+__Coming Up:__ _Support for NuoDB_
+
+Developers:
+* Parth Parekh - parthparekh at gmail dot com
+* Swapnil Dipankar - dswapnil at gmail dot com
 
 #### Technologies used in the project
 * __Java__
@@ -44,11 +52,11 @@ Run the following commands in the given sequence:
 ```
 	curl -i -H "Content-Type: application/json" -X POST -d \
 	'{
-		"username":"swapnildipankar",
-		"password":"ɹɐʞuɐdıD lıudɐʍS",
-		"name_first":"Swapnil",
+		"username":"johndoe",
+		"password":"ǝopuɥoɾ",
+		"name_first":"John",
 		"name_middle":"M",
-		"name_last":"Dipankar",
+		"name_last":"Doe",
 		"date_of_birth":14,
 		"month_of_birth":10,
 		"year_of_birth":1978
@@ -59,11 +67,11 @@ Run the following commands in the given sequence:
 ```
 	'{
 		"id": 1,
-		"username": "swapnildipankar",
+		"username": "johndoe",
 		"password": "41a87d0faca541b691f11c6d51874f37b989f0cb1b0075cce599e94f82cbbdfc",
-		"name_first": "Swapnil",
+		"name_first": "John",
 		"name_middle": "M",
-		"name_last": "Dipankar",
+		"name_last": "Doe",
 		"user_status": "PENDING",
 		"user_status_code": "P",
 		"date_of_birth": 14,
@@ -79,11 +87,11 @@ Run the following commands in the given sequence:
 	curl -i -H "Content-Type: application/json" -X PUT -d \
 	'{
 		"id":"1",
-		"username":"swapnildipankar",
-		"password":"ɹɐʞuɐdıD lıudɐʍS",
-		"name_first":"Swapnil",
+		"username":"johndoe",
+		"password":"ǝopuɥoɾ",
+		"name_first":"John",
 		"name_middle":"M",
-		"name_last":"Dipankar",
+		"name_last":"Doe",
 		"user_status":"ACTIVE",
 		"date_of_birth":14,
 		"month_of_birth":10,
@@ -95,11 +103,11 @@ Run the following commands in the given sequence:
 ```
 	'{
 		"id": 1,
-		"username": "swapnildipankar",
+		"username": "johndoe",
 		"password": "41a87d0faca541b691f11c6d51874f37b989f0cb1b0075cce599e94f82cbbdfc",
-		"name_first": "Swapnil",
+		"name_first": "John",
 		"name_middle": "M",
-		"name_last": "Dipankar",
+		"name_last": "Doe",
 		"user_status": "ACTIVE",
 		"user_status_code": "A",
 		"date_of_birth": 14,
@@ -119,11 +127,11 @@ Run the following commands in the given sequence:
 ```
 	'{
 		"id": 1,
-		"username": "swapnildipankar",
+		"username": "johndoe",
 		"password": "41a87d0faca541b691f11c6d51874f37b989f0cb1b0075cce599e94f82cbbdfc",
-		"name_first": "Swapnil",
+		"name_first": "John",
 		"name_middle": "M",
-		"name_last": "Dipankar",
+		"name_last": "Doe",
 		"user_status": "ACTIVE",
 		"user_status_code": "A",
 		"date_of_birth": 14,
@@ -136,18 +144,18 @@ Run the following commands in the given sequence:
 
 * __GET (By UserName)__ _Request:_
 ```
-	curl 'http://localhost:8400/demows/user/username/swapnildipankar'
+	curl 'http://localhost:8400/demows/user/username/johndoe'
 ```
 
 * _Response:_
 ```
 	'{
 		"id": 1,
-		"username": "swapnildipankar",
+		"username": "johndoe",
 		"password": "41a87d0faca541b691f11c6d51874f37b989f0cb1b0075cce599e94f82cbbdfc",
-		"name_first": "Swapnil",
+		"name_first": "John",
 		"name_middle": "M",
-		"name_last": "Dipankar",
+		"name_last": "Doe",
 		"user_status": "ACTIVE",
 		"user_status_code": "A",
 		"date_of_birth": 14,
@@ -163,11 +171,11 @@ Run the following commands in the given sequence:
 	curl -i -H "Content-Type: application/json" -X DELETE -d \
 	'{
 		"id":"1",
-		"username":"swapnildipankar",
-		"password":"ɹɐʞuɐdıD lıudɐʍS",
-		"name_first":"Swapnil",
+		"username":"johndoe",
+		"password":"ǝopuɥoɾ",
+		"name_first":"John",
 		"name_middle":"M",
-		"name_last":"Dipankar",
+		"name_last":"Doe",
 		"date_of_birth":14,
 		"month_of_birth":10,
 		"year_of_birth":1978
@@ -178,11 +186,11 @@ Run the following commands in the given sequence:
 ```
 	'{
 		"id": 1,
-		"username": "swapnildipankar",
+		"username": "johndoe",
 		"password": "41a87d0faca541b691f11c6d51874f37b989f0cb1b0075cce599e94f82cbbdfc",
-		"name_first": "Swapnil",
+		"name_first": "John",
 		"name_middle": "M",
-		"name_last": "Dipankar",
+		"name_last": "Doe",
 		"user_status": "DELETED",
 		"user_status_code": "D",
 		"date_of_birth": 14,
