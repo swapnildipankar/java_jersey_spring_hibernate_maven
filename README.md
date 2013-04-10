@@ -1,5 +1,5 @@
-Starter project to create RESTful WS using Java, Jersey WS, Spring, Hibernate, Maven, Liquibase. Sample code for integrating with Hibernate/MySQL and MongoDB/NoSQL.<br /><br />
-__Note:__ _This is a skeletal framework. Using the sample code, developers can send a sample CURL call (see section "Sample test CURL calls" below) to the running web service and see the changes propagated all the way to the databases. There are, currently, two webservice end points, /user and /purchase for demonstrating MySQL and MongoDB respectively. Developers will have to write the actual functionality to make use of the framework._
+Archetype starter project to create RESTful WS using Java, Jersey WS, Spring, Hibernate, Maven, Liquibase. Sample code for integrating with Hibernate/MySQL and MongoDB/NoSQL.<br /><br />
+__Note:__ _This is a skeletal archetype framework. Using the sample code, developers can send a sample CURL call (see section "Sample test CURL calls" below) to the running web service and see the changes propagated all the way to the databases. There are, currently, two webservice end points, /user and /purchase for demonstrating MySQL and MongoDB respectively. Developers will have to write the actual functionality to make use of the framework._
 
 * __New:__ _Support for MongoDB_
 * __Coming Up:__ _Support for Cassandra_
